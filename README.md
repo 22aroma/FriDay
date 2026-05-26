@@ -86,10 +86,30 @@ pip install -r requirements.txt
 ### Установка PyTorch (CPU)
 
 ```bash
-pip install --index-url https://download.pytorch.org/whl/cpu torch==2.12.0+cpu
+pip install --index-url https://download.pytorch.org/whl/cpu torch==2.11.0+cpu torchaudio==2.11.0+cpu
+```
+
+### Оптимизация окружения
+
+После установки всех пакетов можно сократить размер venv с ~1.2 GB до ~700 MB:
+
+```bash
+source venv/bin/activate
+# Удаление неиспользуемых тяжёлых зависимостей (scipy, sympy, networkx)
+pip uninstall scipy sympy networkx -y
+# Очистка torch от тестовых данных, заголовков, бинарников
+rm -rf venv/lib/python3.14/site-packages/torch/test
+rm -rf venv/lib/python3.14/site-packages/torch/include
+rm -rf venv/lib/python3.14/site-packages/torch/onnx
+rm -rf venv/lib/python3.14/site-packages/torch/_inductor
+rm -rf venv/lib/python3.14/site-packages/torch/_dynamo
+find venv/lib/python3.14/site-packages -name "*.so" -type f -exec strip --strip-debug {} \;
+pip cache purge
 ```
 
 ### Альтернатива — скрипт настройки
+
+Всё вышеописанное (включая оптимизацию) делает скрипт:
 
 ```bash
 chmod +x setup_venv.sh
