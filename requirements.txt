@@ -1,0 +1,14 @@
+ddgs==9.14.4
+kairos-asr==0.7.0
+num2words==0.5.14
+numpy==2.4.4
+omegaconf==2.3.0
+onnxruntime
+packaging==26.2
+pillow==12.2.0
+PyAudio==0.2.14
+pystray==0.19.5
+requests==2.33.1
+sounddevice==0.5.5
+torch==2.11.0+cpu
+torchaudio==2.11.0+cpu

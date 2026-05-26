@@ -1,0 +1,15 @@
+/python_files/__pycache__/
+/log.txt
+.vscode/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+torch_hub_cache/
