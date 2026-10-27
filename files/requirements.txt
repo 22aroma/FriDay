@@ -1,0 +1,16 @@
+av
+yt-dlp
+torch==2.10.0
+torchaudio==2.10.0
+huggingface_hub>=0.23.0
+transcribe-cpp==0.2.3
+num2words==0.5.14
+numpy==2.4.4
+omegaconf==2.3.0
+onnxruntime
+pillow==12.2.0
+pystray==0.19.5
+requests==2.33.1
+sounddevice==0.5.5
+scipy
+customtkinter==5.2.2
